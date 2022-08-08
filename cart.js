@@ -37,4 +37,30 @@ module.exports = class Cart {
             return('Producto eliminado del carrito correctamente')
         }
     }
+
+    getCartProducts(id) {
+        const cart = this.cart.find(cart => cart.id === id)
+        return cart
+    }
+
+    addProduct(id, obj) {
+        const index = this.cart.findIndex(cart => cart === id)
+        this.cart[index].obj = obj
+        fs.writeFileSync(this.file, JSON.stringify(this.cart))
+        return('Producto agregado al carrito correctamente. ID:' + id)
+    }
+
+    deleteProduct(id, obj) {
+        const index = this.cart.findIndex(cart => cart === id)
+        const index2 = this.cart[index].obj.findIndex(obj => obj === id)
+
+        if (index === -1) {
+            return ({error: -1, descripcion: 'No se encontró el producto en el  carrito'})
+        }
+        else {
+            this.cart[index].obj.splice(index2, 1)
+            fs.writeFileSync(this.file, JSON.stringify(this.cart))
+            return('Producto eliminado del carrito correctamente')  
+        }
+    }
 }

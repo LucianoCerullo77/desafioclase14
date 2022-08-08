@@ -40,7 +40,40 @@ module.exports = class Products {
             this.products[index].stock = obj.stock || this.products[index].stock
 
             fs.writeFileSync(this.file, JSON.stringify(this.products))
-            return('Producto actualizado')
+            return('Producto actualizado correctamente')
         }
+    }
+
+    getId(id) {
+        const product = this.products.find(product => product.id === id)
+        if (!product) {
+            return ({error: -1, descripcion: 'No se encontró el producto'})
+        }
+        else {
+            return product
+        }
+    }
+
+
+    getAll() {
+        return this.products
+    }
+
+    delete(id) {
+        const index = this.products.findIndex(product => product.id === id)
+        if (index === -1) {
+            return ({error: -1, descripcion: 'No se encontró el producto'})
+        }
+        else {
+            this.products.splice(index, 1)
+            fs.writeFileSync(this.file, JSON.stringify(this.products))
+            return('Producto eliminado correctamente')
+        }
+    }
+
+    deleteAll() {
+        this.products = []
+        fs.writeFileSync(this.file, JSON.stringify(this.products))
+        return('Productos eliminados correctamente')
     }
 }

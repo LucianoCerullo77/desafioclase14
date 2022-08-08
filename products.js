@@ -44,7 +44,7 @@ module.exports = class Products {
         }
     }
 
-    getId(id) {
+    getById(id) {
         const product = this.products.find(product => product.id === id)
         if (!product) {
             return ({error: -1, descripcion: 'No se encontró el producto'})
@@ -55,7 +55,7 @@ module.exports = class Products {
     }
 
 
-    getAll() {
+    getAllProducts() {
         return this.products
     }
 

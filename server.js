@@ -31,10 +31,11 @@ function adminAccess(req, res, next) {
 
 routerProducts.get('/:id?', (req, res) => {
     const id = req.params.id
-    if (id) {
-        res.send(products.getProduct(id))
-    } else {
-        res.send(products.getProducts())
+    if(id === undefined){
+        res.send(JSON.stringify(products.getAllProducts()))
+    }
+    else {
+        res.send(JSON.stringify(products.getProduct(id)))
     }
 })
 
@@ -45,13 +46,13 @@ routerProducts.post('/', adminAccess, (req, res) => {
 
 routerProducts.put('/:id', adminAccess, (req, res) => {
     const id = req.params.id
-    const product = products.updateProduct(id, req.body)
+    const product = products.update(id, req.body)
     res.send(product)
 })
 
 routerProducts.delete('/:id', adminAccess, (req, res) => {
     const id = req.params.id
-    const product = products.deleteProduct(id)
+    const product = products.delete(id)
     res.send(product)
 })
 

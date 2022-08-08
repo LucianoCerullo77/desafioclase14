@@ -2,7 +2,6 @@
 "timestamp":"7-8-2022",
 "nombre":"Camaro Coupe",
 "descripcion":"Rojo, Motor V8 6.2 Cilindros 461 CV",
-"codigo":1829,
 "fotoURL":"https://www.chevrolet.com.ar/content/dam/chevrolet/mercosur/master/portuguese/index/performance/2018-camaro-coupe/colorizer/01-images/novo-camaro-cupe-2018-vermelho-mov-intro-05.png?imwidth=600",
 "precio":95000,
 "stock":5},
@@ -10,7 +9,6 @@
 "timestamp":"7-8-2022",
 "nombre":"Nissan 350Z",
 "descripcion":"Azul, Deportivo, Motor V6 280 a 310 CV",
-"codigo":1030,
 "fotoURL":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/2004_Nissan_350Z_3.5_Front.jpg/245px-2004_Nissan_350Z_3.5_Front.jpg",
 "precio":31000,
 "stock":3}
@@ -19,7 +17,6 @@
 "timestamp":"7-8-2022",
 "nombre":"Ford Mustang California",
 "descripcion":"Negro, Coupe, Motor 5.0",
-"codigo":2132,
 "fotoURL":"https://http2.mlstatic.com/D_NQ_NP_735278-MLA50971519647_082022-O.webp",
 "precio":55000,
 "stock":1
